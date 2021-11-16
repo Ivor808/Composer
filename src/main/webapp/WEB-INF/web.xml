@@ -7,7 +7,7 @@
   <!--
   <servlet>
     <servlet-name>FindUsers</servlet-name>
-    <servlet-class>blog.servlet.FindUsers</servlet-class>
+    <servlet-class>Composer.servlet.FindUsers</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>FindUsers</servlet-name>

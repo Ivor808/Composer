@@ -1,21 +1,18 @@
-package blog.tools;
+package Composer.tools;
 
-import blog.dal.CompaniesDao;
-import blog.dal.CreditCardsDao;
-import blog.dal.FoodCartRestaurantsDao;
-import blog.dal.RecommendationsDao;
-import blog.dal.ReservationsDao;
-import blog.dal.RestaurantsDao;
-import blog.dal.ReviewsDao;
-import blog.dal.SitDownRestaurantsDao;
-import blog.dal.TakeOutRestaurantsDao;
-import blog.dal.UsersDao;
-import blog.model.*;
+import Composer.dal.CompaniesDao;
+import Composer.dal.CreditCardsDao;
+import Composer.dal.FoodCartRestaurantsDao;
+import Composer.dal.RecommendationsDao;
+import Composer.dal.ReservationsDao;
+import Composer.dal.RestaurantsDao;
+import Composer.dal.ReviewsDao;
+import Composer.dal.SitDownRestaurantsDao;
+import Composer.dal.TakeOutRestaurantsDao;
+import Composer.dal.UsersDao;
 
 import java.sql.SQLException;
 import java.sql.Date;
-import java.sql.SQLOutput;
-import java.util.ArrayList;
 import java.util.List;
 
 
