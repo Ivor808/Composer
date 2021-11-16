@@ -1,6 +1,6 @@
 package Composer.dal;
 
-import rec.model.*;
+import Composer.model.*;
 
 
 import java.sql.Connection;
