@@ -4,20 +4,20 @@ public class User {
     protected int userId;
     protected String firstName;
     protected String lastName;
-    protected UsersFavorites userFavorite;
+    protected UserFavorites userFavorite;
 
     public User(int userId) {
         this.userId = userId;
     }
 
-    public User(int userId, String firstName, String lastName, UsersFavorites userFavorite) {
+    public User(int userId, String firstName, String lastName, UserFavorites userFavorite) {
         this.userId = userId;
         this.firstName = firstName;
         this.lastName = lastName;
         this.userFavorite = userFavorite;
     }
 
-    public User(String firstName, String lastName, UsersFavorites userFavorite) {
+    public User(String firstName, String lastName, UserFavorites userFavorite) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.userFavorite = userFavorite;
@@ -47,11 +47,11 @@ public class User {
         this.lastName = lastName;
     }
 
-    public UsersFavorites getUserFavorite() {
+    public UserFavorites getUserFavorite() {
         return userFavorite;
     }
 
-    public void setUserFavoriteId(UsersFavorites userFavorite) {
+    public void setUserFavoriteId(UserFavorites userFavorite) {
         this.userFavorite = userFavorite;
     }
 }
