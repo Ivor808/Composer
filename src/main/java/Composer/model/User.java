@@ -4,23 +4,21 @@ public class User {
     protected int userId;
     protected String firstName;
     protected String lastName;
-    protected UserFavorites userFavorite;
+
 
     public User(int userId) {
         this.userId = userId;
     }
 
-    public User(int userId, String firstName, String lastName, UserFavorites userFavorite) {
+    public User(int userId, String firstName, String lastName) {
         this.userId = userId;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.userFavorite = userFavorite;
     }
 
-    public User(String firstName, String lastName, UserFavorites userFavorite) {
+    public User(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.userFavorite = userFavorite;
     }
 
     public int getUserId() {
@@ -47,11 +45,4 @@ public class User {
         this.lastName = lastName;
     }
 
-    public UserFavorites getUserFavorite() {
-        return userFavorite;
-    }
-
-    public void setUserFavoriteId(UserFavorites userFavorite) {
-        this.userFavorite = userFavorite;
-    }
 }

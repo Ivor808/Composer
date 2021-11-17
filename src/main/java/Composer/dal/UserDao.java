@@ -24,16 +24,16 @@ public class UserDao {
     }
 
     public User create(User user) throws SQLException  {
-        String insertUser = "INSERT INTO User(FirstName,LastName,UserFavoriteID) VALUES(?,?,?);";
+        String insertUser = "INSERT INTO User(FirstName,LastName) VALUES(?,?);";
         Connection connection = null;
         PreparedStatement insertStmt = null;
+        ResultSet resultKey = null;
         try {
             connection = connectionManager.getConnection();
             insertStmt = connection.prepareStatement(insertUser);
 
-            insertStmt.setString(1, user.getFirstName();
+            insertStmt.setString(1, user.getFirstName());
             insertStmt.setString(2, user.getLastName());
-            insertStmt.setInt(3, user.getUserFavorite.getUserFavoriteID());
 
             insertStmt.executeUpdate();
 
@@ -61,7 +61,7 @@ public class UserDao {
     }
 
     public User getUserByUserId(int userID) throws SQLException {
-        String selectUser = "SELECT UserID,FirstName,LastName,UserFavoriteID FROM User WHERE UserID=?;";
+        String selectUser = "SELECT UserID,FirstName,LastName FROM User WHERE UserID=?;";
         Connection connection = null;
         PreparedStatement selectStmt = null;
         ResultSet results = null;
@@ -77,8 +77,7 @@ public class UserDao {
                 int resultUserName = results.getInt("UserID");
                 String firstName = results.getString("FirstName");
                 String lastName = results.getString("LastName");
-                int userFavoriteID = results.getInt("UserFavoriteID");
-                User user = new User(resultUserName, firstName, lastName, userFavoriteID);
+                User user = new User(resultUserName, firstName, lastName);
                 return user;
             }
         } catch (SQLException e) {
@@ -108,7 +107,7 @@ public class UserDao {
         try {
             connection = connectionManager.getConnection();
             deleteStmt = connection.prepareStatement(deleteUser);
-            deleteStmt.setString(1, user.getUserId());
+            deleteStmt.setInt(1, user.getUserId());
             deleteStmt.executeUpdate();
 
             return null;

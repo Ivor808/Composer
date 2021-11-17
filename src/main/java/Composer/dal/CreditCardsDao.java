@@ -37,7 +37,7 @@ public class CreditCardsDao {
             insertStmt = c.prepareStatement(insertCreditCards);
             insertStmt.setLong(1, creditCard.getCardNumber());
             insertStmt.setTimestamp(2, new Timestamp(creditCard.getExpiration().getTime()));
-            insertStmt.setString(3, creditCard.getUser().getUserId());
+            insertStmt.setInt(3, creditCard.getUser().getUserId());
 
             insertStmt.executeUpdate();
             return creditCard;
