@@ -16,14 +16,14 @@ import javax.servlet.http.HttpServletResponse;
 
 
 
-@WebServlet("/createuser")
-public class CreateUser extends HttpServlet {
+@WebServlet("/deletesong")
+public class DeleteSongFromAllLikedSongsPlayList extends HttpServlet {
 
-	protected UserDao userDao;
+	protected SongDao songDao;
 	
 	@Override
 	public void init() throws ServletException {
-		userDao = UserDao.getInstance();
+		 songDao = SongDao.getInstance();
 	}
 	
 	@Override
@@ -34,21 +34,25 @@ public class CreateUser extends HttpServlet {
         req.setAttribute("messages", messages);
 
         // Retrieve and validate name.
-        String firstName = req.getParameter("firstName");
-        if (firstName == null || firstName.trim().isEmpty()) {
-            messages.put("success", "Invalid firstName");
+        String songTitle = req.getParameter("SongTitle");
+        if (songTitle == null || songTitle.trim().isEmpty()) {
+            messages.put("success", "Invalid SongTitle or SongTitle");
         } else {
-        	String lastName = req.getParameter("lastName");
+        	String artistName = req.getParameter("ArtistName");
+        	int artistId = Integer.parseInt(req.getParameter("ArtistID"));
+        	int releaseYear = Integer.parseInt(req.getParameter("ReleaseYear"));
+        	String genreType = req.getParameter("GenreType");
+        	
         	try {
-        		User user = new User(firstName, lastName);
-        		user = userDao.create(user);
-        		messages.put("success", "Successfully created " + firstName);
+        		Song song = new Song(songTitle, artistName, artistId, releaseYear, genreType);
+        		song = songDao.create(song);
+        		messages.put("success", "Successfully deleted " + songTitle);
         	} catch (SQLException e) {
         		e.printStackTrace();
         		throw new IOException(e);
         	}
         }
-        req.getRequestDispatcher("/CreateUser.jsp").forward(req, resp);
+        req.getRequestDispatcher("/DeleteSongFromAllLikedSongsPlayList.jsp").forward(req, resp);
     }
 	
 	@Override
@@ -58,7 +62,7 @@ public class CreateUser extends HttpServlet {
         Map<String, String> messages = new HashMap<String, String>();
         req.setAttribute("messages", messages);
         //Just render the JSP.   
-        req.getRequestDispatcher("/CreateUser.jsp").forward(req, resp);
+        req.getRequestDispatcher("/DeleteSongFromAllLikedSongsPlayList.jsp").forward(req, resp);
 	}
 	
 

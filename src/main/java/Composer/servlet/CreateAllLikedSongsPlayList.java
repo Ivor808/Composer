@@ -15,14 +15,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-
-@WebServlet("/createuser")
-public class CreateUser extends HttpServlet {
-
-	protected UserDao userDao;
+@WebServlet("/createallsongsplaylist")
+public class CreateAllLikedSongsPlayList extends HttpServlet {
 	
+	protected AllLikedSongPlaylistDao playListDao;
+	protected UserDao userDao;
+
 	@Override
 	public void init() throws ServletException {
+		
+		playListDao = AllLikedSongPlaylistDao.getInstance();
 		userDao = UserDao.getInstance();
 	}
 	
@@ -42,24 +44,18 @@ public class CreateUser extends HttpServlet {
         	try {
         		User user = new User(firstName, lastName);
         		user = userDao.create(user);
-        		messages.put("success", "Successfully created " + firstName);
+        		AllLikedSongPlaylist playList = new AllLikedSongPlaylist(user);
+        		playList = playListDao.create(playList);
+        		
+        		messages.put("success", "Successfully created an AllLikedSongsPlayList for " + firstName);
         	} catch (SQLException e) {
         		e.printStackTrace();
         		throw new IOException(e);
         	}
         }
-        req.getRequestDispatcher("/CreateUser.jsp").forward(req, resp);
+        req.getRequestDispatcher("/CreateAllLikedSongsPlayList.jsp").forward(req, resp);
     }
 	
-	@Override
-	public void doGet(HttpServletRequest req, HttpServletResponse resp)
-			throws ServletException, IOException {
-		// Map for storing messages.
-        Map<String, String> messages = new HashMap<String, String>();
-        req.setAttribute("messages", messages);
-        //Just render the JSP.   
-        req.getRequestDispatcher("/CreateUser.jsp").forward(req, resp);
-	}
 	
 
 }
