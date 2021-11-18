@@ -1,15 +1,10 @@
 package dal;
-
-import Composer.dal.ConnectionManager;
-import Composer.model.SongList;
-import blog.model.Song;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import model.AddSongToSongList;
 import model.*;
 
 public class AddSongToSongListDao {
@@ -66,6 +61,8 @@ public class AddSongToSongListDao {
         int SongListID = results.getInt("SongListID");
         SongListDao songListDao = SongListDao.getInstance();
         SongList songList=songListDao.getSongListBySongListId(SongListID);
+
+
         SongDao songDao = SongDao.getInstance();
         Song song = songDao.getSongById(songId);
         AddSongToSongList addSongToSongList = new AddSongToSongList(song, songList);

@@ -1,4 +1,4 @@
-package Composer.model;
+package model;
 
 import java.sql.Timestamp;
 

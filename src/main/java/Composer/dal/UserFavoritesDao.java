@@ -1,12 +1,12 @@
-package Composer.dal;
+package dal;
 
-import Composer.model.SongList;
-import Composer.model.User;
-import Composer.model.UserFavorites;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import model.SongList;
+import model.User;
+import model.UserFavorites;
 
 public class UserFavoritesDao extends SongListDao {
   private static UserFavoritesDao instance = null;

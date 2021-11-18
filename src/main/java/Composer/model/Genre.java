@@ -1,4 +1,4 @@
-package Composer.model;
+package model;
 import java.util.concurrent.atomic.AtomicInteger;
 /**
  * Abstract class Restaurants has 3 concrete classes of restaurant

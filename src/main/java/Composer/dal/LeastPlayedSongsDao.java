@@ -1,12 +1,12 @@
-package Composer.dal;
+package dal;
 
-import Composer.model.LeastPlayedSongs;
-import Composer.model.SongList;
-import Composer.model.User;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import model.LeastPlayedSongs;
+import model.SongList;
+import model.User;
 
 
 public class LeastPlayedSongsDao extends SongListDao {

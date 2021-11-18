@@ -1,4 +1,4 @@
-package Composer.model;
+package model;
 
 public class UserFriendList {
     protected int userFriendListId;
@@ -6,11 +6,11 @@ public class UserFriendList {
     protected User friend;
 
     public UserFriendList(int userFriendListID) {
-        this.userFriendListID = userFriendListID;
+        this.userFriendListId = userFriendListID;
     }
 
     public UserFriendList(int userFriendListID, User user, User friend) {
-        this.userFriendListID = userFriendListID;
+        this.userFriendListId = userFriendListID;
         this.user = user;
         this.friend = friend;
     }

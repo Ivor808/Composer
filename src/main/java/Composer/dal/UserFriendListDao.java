@@ -1,15 +1,13 @@
-package Composer.dal;
-
-import Composer.model.*;
+package dal;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Timestamp;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
+import model.User;
+import model.UserFriendList;
 
 
 public class UserFriendListDao {
@@ -145,7 +143,7 @@ public class UserFriendListDao {
         try {
             connection = connectionManager.getConnection();
             deleteStmt = connection.prepareStatement(deleteFriendList);
-            deleteStmt.setint(1, UserFriendList.getUserFriendListId());
+            deleteStmt.setInt(1, userFriendList.getUserFriendListId());
             deleteStmt.executeUpdate();
 
             return null;
@@ -161,8 +159,5 @@ public class UserFriendListDao {
             }
         }
     }
-
-
 }
 
-}

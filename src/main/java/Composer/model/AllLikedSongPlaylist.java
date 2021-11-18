@@ -1,4 +1,4 @@
-package Composer.model;
+package model;
 
 public class AllLikedSongPlaylist extends SongList {
 

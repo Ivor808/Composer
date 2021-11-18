@@ -1,12 +1,12 @@
-package Composer.dal;
+package dal;
 
-import Composer.model.AllLikedSongPlaylist;
-import Composer.model.SongList;
-import Composer.model.User;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import model.AllLikedSongPlaylist;
+import model.SongList;
+import model.User;
 
 
 public class AllLikedSongPlaylistDao extends SongListDao {
