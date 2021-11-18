@@ -1,6 +1,6 @@
-package blog.dal;
+package Composer.dal;
 
-import blog.model.*;
+import Composer.model.*;
 
 import java.sql.Connection;
 import java.sql.Date;
