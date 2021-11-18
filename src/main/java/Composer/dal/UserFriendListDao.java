@@ -40,7 +40,7 @@ public class UserFriendListDao {
             insertStmt.setInt(2, userFriendList.getFriend().getUserId());
 
             insertStmt.executeUpdate();
-            return UserFriendList;
+            return userFriendList;
         } catch (SQLException e) {
             e.printStackTrace();
             throw e;
