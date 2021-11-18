@@ -63,19 +63,19 @@ public class UserFriendListDao {
         try {
             connection = connectionManager.getConnection();
             selectStmt = connection.prepareStatement(selectFriendList);
-            selectStmt.setInt(1, userID);
+            selectStmt.setInt(1, friendListID);
             results = selectStmt.executeQuery();
 
             UserDao userDao = UserDao.getInstance();
             UserDao friendDao = UserDao.getInstance();
 
             if (results.next()) {
-                int friendListID = results.getInt("userFriendListID");
+                int resultfriendListID = results.getInt("userFriendListID");
                 int userId = results.getInt("UserID");
-                int friendID = results.getInt("FriendID")
+                int friendID = results.getInt("FriendID");
                 User user = userDao.getUserByUserId(userId);
                 User friend = friendDao.getUserByUserId(friendID);
-                UserFriendList friendList = new UserFriendList(friendListID, user, friend);
+                UserFriendList friendList = new UserFriendList(resultfriendListID, user, friend);
                 return friendList;
             }
         } catch (SQLException e) {
@@ -114,7 +114,7 @@ public class UserFriendListDao {
             if (results.next()) {
                 int friendListID = results.getInt("userFriendListID");
                 int userId = results.getInt("UserID");
-                int friendID = results.getInt("FriendID")
+                int friendID = results.getInt("FriendID");
                 User user = userDao.getUserByUserId(userId);
                 User friend = friendDao.getUserByUserId(friendID);
                 UserFriendList friendList = new UserFriendList(friendListID, user, friend);
@@ -144,8 +144,8 @@ public class UserFriendListDao {
         PreparedStatement deleteStmt = null;
         try {
             connection = connectionManager.getConnection();
-            deleteStmt = connection.prepareStatement(deleteCard);
-            deleteStmt.setLong(1, UserFriendList.getUserFriendListId());
+            deleteStmt = connection.prepareStatement(deleteFriendList);
+            deleteStmt.setint(1, UserFriendList.getUserFriendListId());
             deleteStmt.executeUpdate();
 
             return null;
