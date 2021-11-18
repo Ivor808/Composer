@@ -28,7 +28,7 @@ public class UserFriendList {
         this.userFriendListId = userFriendListId;
     }
 
-    public String getUser() {
+    public User getUser() {
         return user;
     }
 
@@ -36,7 +36,7 @@ public class UserFriendList {
         this.user = user;
     }
 
-    public String getFriend() {
+    public User getFriend() {
         return friend;
     }
 
