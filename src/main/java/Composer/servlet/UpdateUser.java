@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/updateuser")
+@WebServlet
 public class UpdateUser extends HttpServlet {
 	protected UserDao userDao;
 

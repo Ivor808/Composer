@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
 
 
 
-@WebServlet("/deletesong")
+@WebServlet
 public class DeleteSongFromAllLikedSongsPlayList extends HttpServlet {
 
 	protected SongDao songDao;

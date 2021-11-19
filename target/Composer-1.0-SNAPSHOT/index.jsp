@@ -52,16 +52,16 @@
                         <a class="nav-link page-scroll" href="#feature">Feature</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="about.html">About</a>
+                        <a class="nav-link" href="updateuser">Update User</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="service.html">Service</a>
+                        <a class="nav-link" href="createallsongsplaylist">Create Playlist</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link page-scroll" href="#team">Team</a>
+                        <a class="nav-link page-scroll" href="readuseralllikedsongplaylist">Liked Songs</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link page-scroll" href="#pricing">Pricing</a>
+                        <a class="nav-link page-scroll" href="deletesong">Edit Playlist</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="contact.html">Contact</a>
@@ -81,7 +81,7 @@
                 <h1 class="mb-3">Take Control of your<br>
                     Music</h1>
                 <p class="mb-4">Filter, find, and search for music like you never have before.</p>
-                <a href="createuser" class="btn btn-secondary btn-lg">explore us</a>
+                <a href="createuser" class="btn btn-secondary btn-lg">Create Account</a>
             </div>
         </div>
     </div>

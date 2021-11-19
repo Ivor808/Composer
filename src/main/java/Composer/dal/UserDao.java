@@ -6,6 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import Composer.model.User;
+import java.sql.Statement;
 
 public class UserDao {
     protected ConnectionManager connectionManager;
@@ -29,7 +30,7 @@ public class UserDao {
         ResultSet resultKey = null;
         try {
             connection = connectionManager.getConnection();
-            insertStmt = connection.prepareStatement(insertUser);
+            insertStmt = connection.prepareStatement(insertUser, Statement.RETURN_GENERATED_KEYS);
 
             insertStmt.setString(1, user.getFirstName());
             insertStmt.setString(2, user.getLastName());

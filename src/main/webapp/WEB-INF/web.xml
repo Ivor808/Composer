@@ -13,5 +13,36 @@
     <servlet-name>CreateUser</servlet-name>
     <url-pattern>/createuser</url-pattern>
   </servlet-mapping>
-
+  <servlet>
+    <servlet-name>UpdateUser</servlet-name>
+    <servlet-class>Composer.servlet.UpdateUser</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UpdateUser</servlet-name>
+    <url-pattern>/updateuser</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>createallsongsplaylist</servlet-name>
+    <servlet-class>Composer.servlet.CreateAllLikedSongsPlayList</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>createallsongsplaylist</servlet-name>
+    <url-pattern>/createallsongsplaylist</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>deletesong</servlet-name>
+    <servlet-class>Composer.servlet.DeleteSongFromAllLikedSongsPlayList</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>deletesong</servlet-name>
+    <url-pattern>/deletesong</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>readuseralllikedsongplaylist</servlet-name>
+    <servlet-class>Composer.servlet.ReadUserAllLikedSongsPlayList</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>readuseralllikedsongplaylist</servlet-name>
+    <url-pattern>/readuseralllikedsongplaylist</url-pattern>
+  </servlet-mapping>
 </web-app>

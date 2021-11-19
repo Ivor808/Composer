@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-@WebServlet("/createallsongsplaylist")
+@WebServlet
 public class CreateAllLikedSongsPlayList extends HttpServlet {
 	
 	protected AllLikedSongPlaylistDao playListDao;
