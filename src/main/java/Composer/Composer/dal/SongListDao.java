@@ -4,9 +4,12 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+<<<<<<< HEAD:src/main/java/Composer/dal/SongListDao.java
 import java.util.ArrayList;
 import java.util.List;
 
+=======
+>>>>>>> master:src/main/java/Composer/Composer/dal/SongListDao.java
 import Composer.model.SongList;
 import Composer.model.User;
 

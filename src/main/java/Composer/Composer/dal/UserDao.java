@@ -96,6 +96,7 @@ public class UserDao {
         return null;
     }
     
+<<<<<<< HEAD:src/main/java/Composer/dal/UserDao.java
     public User updateLastName(User user, String newLastName) throws SQLException {
 		String updateUser = "UPDATE User SET LastName=? WHERE UserId=?;";
 		Connection connection = null;
@@ -123,6 +124,11 @@ public class UserDao {
 		}
     }
   
+=======
+    
+
+
+>>>>>>> master:src/main/java/Composer/Composer/dal/UserDao.java
 
     public User delete(User user) throws SQLException {
         String deleteUser = "DELETE FROM User WHERE UserID=?;";
