@@ -1,6 +1,6 @@
 package Composer.model;
 
-import java.security.Timestamp;
+import java.sql.Timestamp;
 
 public class CreditCards {
     protected Long cardNumber;

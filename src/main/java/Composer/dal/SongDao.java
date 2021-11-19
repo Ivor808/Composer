@@ -1,17 +1,11 @@
-package blog.dal;
-
-import blog.model.*;
+package Composer.dal;
 
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-//import java.sql.Timestamp;
-import java.util.ArrayList;
-//import java.util.Date;
-import java.util.List;
-//import java.sql.Statement;
+import Composer.model.Song;
+
 
 
 
@@ -34,7 +28,7 @@ public class SongDao {
     
     public Song create(Song song) throws SQLException {
         String insertSong =
-                "INSERT INTO Song(SongTitle, ArtistName, ArtistID, ReleaseYear, GenreID" +
+                "INSERT INTO Song(SongTitle, ArtistName, ArtistID, ReleaseYear, GenreType" +
                         "VALUES(?,?,?,?,?);";
         Connection connection = null;
         PreparedStatement insertStmt = null;
@@ -47,7 +41,7 @@ public class SongDao {
             insertStmt.setString(2, (song.getArtistName()));
             insertStmt.setInt(3, (song.getArtistID()));
             insertStmt.setInt(4, (song.getReleaseYear()));
-            insertStmt.setInt(5, (song.getGenreID()));
+            insertStmt.setString(5, (song.getGenreType().name()));
             insertStmt.executeUpdate();
     
             return song;
@@ -65,7 +59,7 @@ public class SongDao {
     }
     
     public Song getSongById(int songId) throws SQLException {
-        String selectSong = "SELECT SongId, SongTitle, ArtistName, ArtistID, ReleaseYear, GenreID FROM Song WHERE SongId=?;";
+        String selectSong = "SELECT SongId, SongTitle, ArtistName, ArtistID, ReleaseYear, GenreType FROM Song WHERE SongId=?;";
         Connection connection = null;
         PreparedStatement selectStmt = null;
         ResultSet results = null;
@@ -80,8 +74,8 @@ public class SongDao {
                 String name = results.getString("ArtistName");
                 int id = results.getInt("ArtistID");
                 int year = results.getInt("ReleaseYear");
-                int genid = results.getInt("GenreID");
-                Song song = new Song(sonId, title, name, id, year, genid);
+                Song.GenreType gt = Song.GenreType.valueOf(results.getString("GenreType"));
+                Song song = new Song(sonId, title, name, id, year, gt);
                 return song;
             }
         } catch (SQLException e) {
@@ -100,6 +94,9 @@ public class SongDao {
         }
         return null;
     }
+    
+    
+    
     
     /**
      * This runs a DELETE statement.

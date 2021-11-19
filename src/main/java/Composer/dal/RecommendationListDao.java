@@ -1,12 +1,11 @@
 package Composer.dal;
-
-import Composer.model.RecommendationList;
-import Composer.model.SongList;
-import Composer.model.User;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import Composer.model.RecommendationList;
+import Composer.model.SongList;
+import Composer.model.User;
 
 public class RecommendationListDao extends SongListDao {
 
