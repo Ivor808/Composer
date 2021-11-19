@@ -1,4 +1,4 @@
-package blog.model;
+package Composer.model;
 import java.util.concurrent.atomic.AtomicInteger;
 /**
  * Abstract class Restaurants has 3 concrete classes of restaurant
@@ -16,7 +16,7 @@ public class Genre {
 	    METAL,
 	    POP,
 	    ROCK,
-	    R_AND_B, //I think we can't store '&' as enum
+	    R_AND_B
 	    
 	}
     public Genre(GenreType genre) {

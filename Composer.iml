@@ -44,8 +44,9 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="mysql.connector.java" level="project" />
-    <orderEntry type="library" name="taglibs-standard-impl-1.2.5" level="project" />
-    <orderEntry type="library" name="taglibs-standard-spec-1.2.5" level="project" />
+    <orderEntry type="library" exported="" name="taglibs-standard-impl-1.2.5" level="project" />
+    <orderEntry type="library" exported="" name="taglibs-standard-spec-1.2.5" level="project" />
+    <orderEntry type="library" exported="" name="mysql-connector-java-8.0.16" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: javax:javaee-web-api:8.0.1" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.junit.jupiter:junit-jupiter-api:5.7.1" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.apiguardian:apiguardian-api:1.1.0" level="project" />

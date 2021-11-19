@@ -1,5 +1,6 @@
-package blog.model;
+package Composer.model;
 import java.util.concurrent.atomic.AtomicInteger;
+
 /**
  * Abstract class Restaurants has 3 concrete classes of restaurant
  */
@@ -9,24 +10,36 @@ public class Song {
     protected String ArtistName;
     protected int ArtistID;
     protected int ReleaseYear;
-    protected int GenreID;
+    protected GenreType GenreType;
     protected static final AtomicInteger count = new AtomicInteger(0); 
 
-    public Song(int songId,String songTitle, String artistName, int artistID, int releaseYear, int genreID) {
+    public enum GenreType {
+	    ALTERNATIVE,
+	    BLUES,
+	    HIPHOP,
+	    INDIEALT,
+	    METAL,
+	    POP,
+	    ROCK,
+	    R_AND_B
+	    
+	}
+    
+    public Song(int songId,String songTitle, String artistName, int artistID, int releaseYear, GenreType genreType) {
     	this.SongId = songId;
         this.SongTitle = songTitle;
         this.ArtistName = artistName;
         this.ArtistID = artistID;
         this.ReleaseYear = releaseYear;
-        this.GenreID = genreID;
+        this.GenreType =genreType;
     }
-    public Song(String songTitle, String artistName, int artistID, int releaseYear, int genreID) {
+    public Song(String songTitle, String artistName, int artistID, int releaseYear, GenreType genreType) {
     	this.SongId = count.incrementAndGet(); 
         this.SongTitle = songTitle;
         this.ArtistName = artistName;
         this.ArtistID = artistID;
         this.ReleaseYear = releaseYear;
-        this.GenreID = genreID;
+        this.GenreType = genreType;
     }
 
     public int getSongId() {
@@ -69,15 +82,12 @@ public class Song {
         this.ReleaseYear = releaseYear;
     }
 
-
-
-
-    public int getGenreID() {
-        return this.GenreID;
+    public GenreType getGenreType() {
+        return this.GenreType;
     }
 
-    public void setGenreID(int genreID) {
-        this.GenreID = genreID;
+    public void setGenreType(GenreType genre) {
+        this.GenreType = genre;
     }
 
 }

@@ -1,15 +1,13 @@
 package Composer.dal;
 
-import Composer.model.*;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Timestamp;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import Composer.model.CreditCards;
+import Composer.model.User;
 
 public class CreditCardsDao {
     protected ConnectionManager connectionManager;
@@ -37,7 +35,7 @@ public class CreditCardsDao {
             insertStmt = c.prepareStatement(insertCreditCards);
             insertStmt.setLong(1, creditCard.getCardNumber());
             insertStmt.setTimestamp(2, new Timestamp(creditCard.getExpiration().getTime()));
-            insertStmt.setString(3, creditCard.getUser().getUserId());
+            insertStmt.setInt(3, creditCard.getUser().getUserId());
 
             insertStmt.executeUpdate();
             return creditCard;
@@ -122,5 +120,3 @@ public class CreditCardsDao {
 
 
     }
-
-}

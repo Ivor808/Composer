@@ -1,10 +1,14 @@
 package Composer.dal;
-import Composer.model.*;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+
+import Composer.model.SongList;
+import Composer.model.User;
 
 public class SongListDao {
 
@@ -100,6 +104,47 @@ public class SongListDao {
     }
     return null;
   }
+  
+ public List<SongList> getSongListByUserId(int UserId) throws SQLException {
+	  String selectSongList =
+	      "SELECT SongListId, UserId " +
+	          "FROM SongList " +
+	          "WHERE UserId=?;";
+	  Connection connection = null;
+	  PreparedStatement selectStmt = null;
+	  ResultSet results = null;
+	  List<SongList> songLists = new ArrayList<>();
+	  try {
+	    connection = connectionManager.getConnection();
+	    selectStmt = connection.prepareStatement(selectSongList);
+	    selectStmt.setInt(1, UserId);
+	    results = selectStmt.executeQuery();
+	    UserDao userDao = UserDao.getInstance();
+	    while (results.next()) {
+	      int resultSongListId = results.getInt("SongListId");
+	      int userId = results.getInt("UserId");
+	      User user = userDao.getUserByUserId(userId);
+	      SongList songList = new SongList(resultSongListId, user);
+	      songLists.add(songList);
+	    }
+	  } catch (SQLException e) {
+	    e.printStackTrace();
+	    throw e;
+	  } finally {
+	    if (connection != null) {
+	      connection.close();
+	    }
+	    if (selectStmt != null) {
+	      selectStmt.close();
+	    }
+	    if (results != null) {
+	      results.close();
+	    }
+	  }
+	  return songLists;
+	}
+  
+  
 
   public SongList delete(SongList songList) throws SQLException {
     String deleteSongList = "DELETE FROM SongList WHERE SongListId=?;";

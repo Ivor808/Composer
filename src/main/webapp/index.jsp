@@ -81,7 +81,7 @@
                 <h1 class="mb-3">Take Control of your<br>
                     Music</h1>
                 <p class="mb-4">Filter, find, and search for music like you never have before.</p>
-                <a href="#" class="btn btn-secondary btn-lg">explore us</a>
+                <a href="/Composer/createuser" class="btn btn-secondary btn-lg">explore us</a>
             </div>
         </div>
     </div>
