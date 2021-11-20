@@ -25,6 +25,9 @@ public class ReadUserAllLikedSongsPlayList extends HttpServlet {
   public void init() throws ServletException {
     allLikedSongPlaylistDao = AllLikedSongPlaylistDao.getInstance();
   }
+  
+  
+  
   @Override
   // display the all liked song playlist
   public void doGet(HttpServletRequest req, HttpServletResponse resp)
@@ -82,7 +85,7 @@ public class ReadUserAllLikedSongsPlayList extends HttpServlet {
 	    Map<String, String> messages = new HashMap<String, String>();
 	    req.setAttribute("messages", messages);
 	    // get user's allikeplaylist form user name to playlist
-	    List<AllLikedSongPlaylist> allLikedSongPlaylists = new ArrayList<AllLikedSongPlaylist>();
+	    List<Song> allLikedSongPlaylists = new ArrayList<Song>();
 	    //List<BlogUsers> blogUsers = new ArrayList<BlogUsers>();
 
 	    // Retrieve and validate name.
@@ -102,6 +105,11 @@ public class ReadUserAllLikedSongsPlayList extends HttpServlet {
 	          if (user == null) {
 	        	  messages.put("success", "UserId is invalid");
 	          } else {
+	        	  SongDao songDao = SongDao.getInstance();
+	        	  
+	        	  
+	        	  
+	        	  
 	        	  SongListDao songListDao = SongListDao.getInstance();
 		          List<SongList> songLists = songListDao.getSongListByUserId(userId);
 		          for(SongList songList: songLists) {

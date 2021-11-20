@@ -15,7 +15,7 @@
 	<form action="readuseralllikedsongplaylist" method="post">
 		<p>
 			<label for="userId">UserId</label>
-			<input id="userId" name="userId" value="${fn:escapeXml(param.userId)}">
+			<input id="userId" name="userId" value="${fn:escapeXml(param.userid)}">
 		</p>
 		<p>
 			<input type="submit">
@@ -31,11 +31,11 @@
 	        <th>SongTitle</th>
 	        <th>ReleaseYear</th>
 	    </tr>
-	    <c:forEach items="${songs}" var="songs" >
+	    <c:forEach items="${songs}" var="song" >
 	        <tr>
-	        	<td><c:out value="${songs.getSongId()}" /></td>
-	            <td><c:out value="${songs.getSongTitle()}" /></td>
-	            <td><c:out value="${songs.getReleaseYear()}" /></td>
+	        	<td><c:out value="${song.getSongId()}" /></td>
+	            <td><c:out value="${song.getSongTitle()}" /></td>
+	            <td><c:out value="${song.getReleaseYear()}" /></td>
 	        </tr>
 	    </c:forEach>
 </table>
