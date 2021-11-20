@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+
 import Composer.model.AllLikedSongPlaylist;
 import Composer.model.SongList;
 import Composer.model.User;
@@ -23,16 +25,19 @@ public class AllLikedSongPlaylistDao extends SongListDao {
 
   public AllLikedSongPlaylist create(AllLikedSongPlaylist allLikedSongPlaylist) throws SQLException {
 
-    SongList res = create(new SongList(allLikedSongPlaylist.getSongListId(), allLikedSongPlaylist.getUserId()));
+    SongList res = create(new SongList(allLikedSongPlaylist.getUserId()));
     allLikedSongPlaylist.setSongListId(res.getSongListId());
     String insertAllLikedSongPlaylist = "INSERT INTO AllLikedSongPlaylist(SongListId) VALUES(?);";
     Connection connection = null;
     PreparedStatement insertStmt = null;
     try {
       connection = connectionManager.getConnection();
-      insertStmt = connection.prepareStatement(insertAllLikedSongPlaylist);
+      insertStmt = connection.prepareStatement(insertAllLikedSongPlaylist, Statement.RETURN_GENERATED_KEYS);
       insertStmt.setInt(1, allLikedSongPlaylist.getSongListId());
       insertStmt.executeUpdate();
+      
+      
+      
       return allLikedSongPlaylist;
     } catch (SQLException e) {
       e.printStackTrace();

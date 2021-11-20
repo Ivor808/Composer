@@ -8,22 +8,24 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Create an AllLikedSongsPlayList</title>
+<title>Add a Song from "All Liked Songs" PlayList</title>
 </head>
 <body>
 	<h1>${messages.title}</h1>
-	<form action="createallsongsplaylist" method="post">
+	<form action="addsong" method="post">
 		<p>
-			<label for="userId">UserID</label>
-			<input id="userId" name="userId" value="${fn:escapeXml(param.userId)}">
+			<div <c:if test="${messages.disableSubmit}">style="display:none"</c:if>>
+				<label for="SongTitle">SongTitle</label>
+				<input id="SongTitle" name="SongTitle" value="${fn:escapeXml(param.songtitle)}">
+			</div>
 		</p>
 		<p>
+			<span id="submitButton" <c:if test="${messages.disableSubmit}">style="display:none"</c:if>>
 			<input type="submit">
+			</span>
 		</p>
 	</form>
 	<br/><br/>
-	<p>
-		<span id="successMessage"><b>${messages.success}</b></span>
-	</p>
+	
 </body>
 </html>

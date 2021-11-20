@@ -11,6 +11,16 @@
     <title>AllLikedSongPlaylists</title>
 </head>
 <body>
+	<h1>Enter UserId</h1>
+	<form action="readuseralllikedsongplaylist" method="get">
+		<p>
+			<label for="userId">UserId</label>
+			<input id="userId" name="userId" value="">
+		</p>
+		<p>
+			<input type="submit">
+		</p>
+	</form>
 <h1>${messages.title}</h1>
 <table border="1">
     <tr>

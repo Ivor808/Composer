@@ -38,7 +38,6 @@ public class SongListDao {
       connection = connectionManager.getConnection();
       insertStmt = connection.prepareStatement(insertSongList,
           Statement.RETURN_GENERATED_KEYS);
-      insertStmt = connection.prepareStatement(insertSongList);
       insertStmt.setInt(1, songList.getUserId().getUserId());
       insertStmt.executeUpdate();
       resultKey = insertStmt.getGeneratedKeys();
@@ -76,7 +75,7 @@ public class SongListDao {
     ResultSet results = null;
     try {
       connection = connectionManager.getConnection();
-      selectStmt = connection.prepareStatement(selectSongList);
+      selectStmt = connection.prepareStatement(selectSongList, Statement.RETURN_GENERATED_KEYS);
       selectStmt.setInt(1, songListId);
       results = selectStmt.executeQuery();
       UserDao userDao = UserDao.getInstance();

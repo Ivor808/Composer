@@ -1,5 +1,4 @@
 package Composer.model;
-import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * Abstract class Restaurants has 3 concrete classes of restaurant
@@ -11,7 +10,6 @@ public class Song {
     protected int ArtistID;
     protected int ReleaseYear;
     protected GenreType GenreType;
-    protected static final AtomicInteger count = new AtomicInteger(0); 
 
     public enum GenreType {
 	    ALTERNATIVE,
@@ -25,16 +23,10 @@ public class Song {
 	    
 	}
     
-    public Song(int songId,String songTitle, String artistName, int artistID, int releaseYear, GenreType genreType) {
+    public Song(int songId) {
     	this.SongId = songId;
-        this.SongTitle = songTitle;
-        this.ArtistName = artistName;
-        this.ArtistID = artistID;
-        this.ReleaseYear = releaseYear;
-        this.GenreType =genreType;
     }
     public Song(String songTitle, String artistName, int artistID, int releaseYear, GenreType genreType) {
-    	this.SongId = count.incrementAndGet(); 
         this.SongTitle = songTitle;
         this.ArtistName = artistName;
         this.ArtistID = artistID;

@@ -34,27 +34,40 @@ public class CreateAllLikedSongsPlayList extends HttpServlet {
         // Map for storing messages.
         Map<String, String> messages = new HashMap<String, String>();
         req.setAttribute("messages", messages);
-
-        // Retrieve and validate name.
-        String firstName = req.getParameter("firstName");
-        if (firstName == null || firstName.trim().isEmpty()) {
-            messages.put("success", "Invalid firstName");
+        
+          
+        String userId = req.getParameter("userId");
+        if (userId == null || userId.trim().isEmpty()) {
+        	messages.put("success", "Please enter a valid UserId.");
         } else {
-        	String lastName = req.getParameter("lastName");
         	try {
-        		User user = new User(firstName, lastName);
-        		user = userDao.create(user);
-        		AllLikedSongPlaylist playList = new AllLikedSongPlaylist(user);
-        		playList = playListDao.create(playList);
-        		
-        		messages.put("success", "Successfully created an AllLikedSongsPlayList for " + firstName);
+        		int userIdInt = Integer.parseInt(userId);
+        		User user = userDao.getUserByUserId(userIdInt);
+        		if(user == null) {
+        			messages.put("success", "UserId does not exist.");
+        		} else {
+        			AllLikedSongPlaylist playList = new AllLikedSongPlaylist(user);
+        			playList = playListDao.create(playList);
+        			messages.put("success", "Successfully created an AllLikedSongsPlaylist for userId " + userId);
+        			req.setAttribute("playList", playList);
+        		}
         	} catch (SQLException e) {
-        		e.printStackTrace();
-        		throw new IOException(e);
-        	}
+				e.printStackTrace();
+				throw new IOException(e);
+	        }
         }
         req.getRequestDispatcher("/CreateAllLikedSongsPlayList.jsp").forward(req, resp);
     }
+	
+	@Override
+	public void doGet(HttpServletRequest req, HttpServletResponse resp)
+			throws ServletException, IOException {
+		// Map for storing messages.
+        Map<String, String> messages = new HashMap<String, String>();
+        req.setAttribute("messages", messages);
+        //Just render the JSP.   
+        req.getRequestDispatcher("/CreateAllLikedSongsPlayList.jsp").forward(req, resp);
+	}
 	
 	
 
