@@ -3,15 +3,9 @@ package Composer.dal;
 import Composer.model.*;
 
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-//import java.sql.Timestamp;
-import java.util.ArrayList;
-//import java.util.Date;
-import java.util.List;
-//import java.sql.Statement;
 
 
 
@@ -81,7 +75,7 @@ public class SongDao {
                 int id = results.getInt("ArtistID");
                 int year = results.getInt("ReleaseYear");
                 Song.GenreType gt = Song.GenreType.valueOf(results.getString("GenreType"));
-                Song song = new Song(sonId, title, name, id, year, gt);
+                Song song = new Song(sonId);
                 return song;
             }
         } catch (SQLException e) {

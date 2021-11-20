@@ -12,16 +12,18 @@
 </head>
 <body>
 	<h1>Enter UserId</h1>
-	<form action="readuseralllikedsongplaylist" method="get">
+	<form action="readuseralllikedsongplaylist" method="post">
 		<p>
 			<label for="userId">UserId</label>
-			<input id="userId" name="userId" value="">
+			<input id="userId" name="userId" value="${fn:escapeXml(param.userId)}">
 		</p>
 		<p>
 			<input type="submit">
+			<br/><br/><br/>
 		</p>
 	</form>
-<h1>${messages.title}</h1>
+
+
 <table border="1">
     <tr>
         <th>SongListID</th>

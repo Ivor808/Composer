@@ -80,8 +80,8 @@ public class SongListDao {
       results = selectStmt.executeQuery();
       UserDao userDao = UserDao.getInstance();
       if (results.next()) {
-        int resultSongListId = results.getInt("SongListId");
-        int userId = results.getInt("UserId");
+        int resultSongListId = results.getInt("songListId");
+        int userId = results.getInt("userId");
 
         User user = userDao.getUserByUserId(userId);
         SongList songList = new SongList(resultSongListId, user);

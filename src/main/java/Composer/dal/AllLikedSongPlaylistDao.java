@@ -27,7 +27,7 @@ public class AllLikedSongPlaylistDao extends SongListDao {
 
     SongList res = create(new SongList(allLikedSongPlaylist.getUserId()));
     allLikedSongPlaylist.setSongListId(res.getSongListId());
-    String insertAllLikedSongPlaylist = "INSERT INTO AllLikedSongPlaylist(SongListId) VALUES(?);";
+    String insertAllLikedSongPlaylist = "INSERT INTO AllLikedSongPlaylist(SongListID) VALUES(?);";
     Connection connection = null;
     PreparedStatement insertStmt = null;
     try {
@@ -54,10 +54,10 @@ public class AllLikedSongPlaylistDao extends SongListDao {
 
   public AllLikedSongPlaylist getAllLikedSongPlaylistById(int allLikedSongPlaylistId) throws SQLException {
     String selectAllLikedSongPlaylist =
-        "SELECT AllLikedSongPlaylist.SongListId AS AllLikedSongPlaylistId " +
-            "FROM LeastPlayedSongs INNER JOIN SongList " +
-            "  ON AllLikedSongPlaylist.SongListId = SongListId.SongListId " +
-            "WHERE AllLikedSongPlaylist.AllLikedSongPlaylistId=?;";
+        "SELECT AllLikedSongPlaylist.SongListID AS AllLikedSongPlaylistId " +
+            "FROM AllLikedSongPlaylist INNER JOIN SongList " +
+            "  ON AllLikedSongPlaylist.SongListID = SongList.SongListID " +
+            "WHERE AllLikedSongPlaylist.SongListID=?;";
     Connection connection = null;
     PreparedStatement selectStmt = null;
     ResultSet results = null;
@@ -68,7 +68,7 @@ public class AllLikedSongPlaylistDao extends SongListDao {
       results = selectStmt.executeQuery();
       UserDao userDao = UserDao.getInstance();
       if(results.next()) {
-        int resultAllLikedSongPlaylistId = results.getInt("SongListId");
+        int resultAllLikedSongPlaylistId = results.getInt("AllLikedSongPlaylistId");
         int userId = results.getInt("UserId");
 
         User user = userDao.getUserByUserId(userId);
@@ -93,7 +93,7 @@ public class AllLikedSongPlaylistDao extends SongListDao {
   }
 
   public AllLikedSongPlaylist delete(AllLikedSongPlaylist allLikedSongPlaylist) throws SQLException {
-    String deleteAllLikedSongPlaylist = "DELETE FROM deleteAllLikedSongPlaylist WHERE SongListId=?;";
+    String deleteAllLikedSongPlaylist = "DELETE FROM deleteAllLikedSongPlaylist WHERE SongListID=?;";
     Connection connection = null;
     PreparedStatement deleteStmt = null;
     try {
