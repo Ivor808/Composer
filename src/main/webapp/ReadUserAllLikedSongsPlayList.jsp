@@ -22,19 +22,22 @@
 			<br/><br/><br/>
 		</p>
 	</form>
-
-
-<table border="1">
-    <tr>
-        <th>SongListID</th>
-        <th>UserID</th>
-    </tr>
-    <c:forEach items="${allLikedSongPlaylists}" var="allLikedSongPlaylists" >
-        <tr>
-            <td><c:out value="${allLikedSongPlaylists.getSongListId()}" /></td>
-            <td><c:out value="${allLikedSongPlaylists.getUserId()}" /></td>
-        </tr>
-    </c:forEach>
+	<p>
+		<span id="successMessage"><b>${messages.success}</b></span>
+	</p>
+	<table border="1">
+	        <tr>
+	        <th>SongID</th>
+	        <th>SongTitle</th>
+	        <th>ReleaseYear</th>
+	    </tr>
+	    <c:forEach items="${songs}" var="songs" >
+	        <tr>
+	        	<td><c:out value="${songs.getSongId()}" /></td>
+	            <td><c:out value="${songs.getSongTitle()}" /></td>
+	            <td><c:out value="${songs.getReleaseYear()}" /></td>
+	        </tr>
+	    </c:forEach>
 </table>
 </body>
 </html>

@@ -33,8 +33,19 @@ public class Song {
         this.ReleaseYear = releaseYear;
         this.GenreType = genreType;
     }
-
-    public int getSongId() {
+    
+    
+    
+    
+    
+    
+	public Song(int songId, String songTitle, int releaseYear) {
+		super();
+		SongId = songId;
+		SongTitle = songTitle;
+		ReleaseYear = releaseYear;
+	}
+	public int getSongId() {
         return this.SongId;
     }
 
