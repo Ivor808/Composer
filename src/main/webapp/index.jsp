@@ -55,7 +55,7 @@
                         <a class="nav-link" href="updateuser">Update User</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="createallsongsplaylist">Create Playlist</a>
+                        <a class="nav-link" href="createallsongsplaylist">Create All Liked Songs Playlist</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link page-scroll" href="readuseralllikedsongplaylist">Liked Songs</a>
@@ -64,7 +64,7 @@
                         <a class="nav-link page-scroll" href="deletesong">Edit Playlist</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact</a>
+                        <a class="nav-link" href="CreateUserFavorites">Create User Favorite Playlist</a>
                     </li>
                 </ul>
             </div>
