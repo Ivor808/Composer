@@ -87,7 +87,7 @@ public class UserFavoritesDao extends SongListDao {
   }
 
   public UserFavorites delete(UserFavorites userFavorites) throws SQLException {
-    String deleteUserFavorites = "DELETE FROM deleteUserFavorites WHERE SongListId=?;";
+    String deleteUserFavorites = "DELETE FROM Userfavorites WHERE SongListId=?;";
     Connection connection = null;
     PreparedStatement deleteStmt = null;
     try {

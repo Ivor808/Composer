@@ -46,10 +46,7 @@
             <div class="collapse navbar-collapse text-center" id="navbar">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link page-scroll" href="#feature">Feature</a>
+                        <a class="nav-link" href="/Composer/">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="updateuser">Update User</a>
@@ -65,6 +62,9 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="CreateUserFavorites">Create User Favorite Playlist</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="DeleteUserFavorites">Delete User Favorites</a>
                     </li>
                 </ul>
             </div>
@@ -99,107 +99,11 @@
     </div>
 </section>
 
-<!-- feature -->
-<section class="section feature mb-0" id="feature">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 text-center">
-                <h2 class="section-title">Awesome Features</h2>
-                <p class="mb-100">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.<br>Excepteur sint occaecat cupidatat non proident</p>
-            </div>
-            <!-- feature item -->
-            <div class="col-md-6 mb-80">
-                <div class="d-flex feature-item">
-                    <div>
-                        <i class="ti-ruler-pencil feature-icon mr-4"></i>
-                    </div>
-                    <div>
-                        <h4>Awesome Design</h4>
-                        <p>Consectetur adipiscing elit donec tempus
-                            pellentesque dui.</p>
-                    </div>
-                </div>
-            </div>
-            <!-- feature item -->
-            <div class="col-md-6 mb-80">
-                <div class="d-flex feature-item">
-                    <div>
-                        <i class="ti-layout-cta-left feature-icon mr-4"></i>
-                    </div>
-                    <div>
-                        <h4>Easy Customize</h4>
-                        <p>Consectetur adipiscing elit donec tempus
-                            pellentesque dui.</p>
-                    </div>
-                </div>
-            </div>
-            <!-- feature item -->
-            <div class="col-md-6 mb-80">
-                <div class="d-flex feature-item">
-                    <div>
-                        <i class="ti-split-v-alt feature-icon mr-4"></i>
-                    </div>
-                    <div>
-                        <h4>Bug free Code</h4>
-                        <p>Consectetur adipiscing elit donec tempus
-                            pellentesque dui.</p>
-                    </div>
-                </div>
-            </div>
-            <!-- feature item -->
-            <div class="col-md-6 mb-80">
-                <div class="d-flex feature-item">
-                    <div>
-                        <i class="ti-layers-alt feature-icon mr-4"></i>
-                    </div>
-                    <div>
-                        <h4>Organized Layouts</h4>
-                        <p>Consectetur adipiscing elit donec tempus
-                            pellentesque dui.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <img class="feature-bg-1 up-down-animation" src="images/background-shape/feature-bg-1.png" alt="bg-shape">
-    <img class="feature-bg-2 left-right-animation" src="images/background-shape/feature-bg-2.png" alt="bg-shape">
-</section>
-<!-- /feature -->
-
-<!-- newsletter -->
-<section class="newsletter">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 text-center">
-                <h2>Subscribe to our newsletter</h2>
-                <p class="mb-5">Receive updates, news and deals</p>
-            </div>
-            <div class="col-lg-8 col-sm-10 col-12 mx-auto">
-                <form action="#">
-                    <div class="input-wrapper position-relative">
-                        <input type="email" class="newsletter-form" id="newsletter" placeholder="Enter your email">
-                        <button type="submit" value="send" class="btn newsletter-btn">subscribe</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-    <!-- background shapes -->
-    <img class="newsletter-bg-shape left-right-animation" src="images/background-shape/seo-ball-2.png" alt="background-shape">
-</section>
-<!-- /newsletter -->
-
 <!-- footer -->
 <footer class="footer-section footer" style="background-image: url(images/backgrounds/footer-bg.png);">
     <div class="container">
         <div class="row">
-            <div class="col-lg-4 text-center text-lg-left mb-4 mb-lg-0">
-                <!-- logo -->
-                <a href="index.html">
-                    <img class="img-fluid" src="images/logo.png" alt="logo">
-                </a>
-            </div>
-            <!-- footer menu -->
+          <%--  <!-- footer menu -->
             <nav class="col-lg-8 align-self-center mb-5">
                 <ul class="list-inline text-lg-right text-center footer-menu">
                     <li class="list-inline-item active"><a href="index.html">Home</a></li>
@@ -226,7 +130,7 @@
                         <a class="black" href="#"><i class="ti-github"></i></a>
                     </li>
                 </ul>
-            </nav>
+            </nav>--%>
         </div>
     </div>
 </footer>

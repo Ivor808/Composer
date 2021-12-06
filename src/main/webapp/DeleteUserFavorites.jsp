@@ -8,26 +8,85 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Update a User</title>
+<title>Delete a UserFavorites PlayList</title>
+	<!-- mobile responsive meta -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- ** Plugins Needed for the Project ** -->
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
+	<!-- themefy-icon -->
+	<link rel="stylesheet" href="plugins/themify-icons/themify-icons.css">
+	<!-- slick slider -->
+	<link rel="stylesheet" href="plugins/slick/slick.css">
+	<!-- venobox popup -->
+	<link rel="stylesheet" href="plugins/Venobox/venobox.css">
+	<!-- aos -->
+	<link rel="stylesheet" href="plugins/aos/aos.css">
+
+	<!-- Main Stylesheet -->
+	<link href="css/style.css" rel="stylesheet">
+
+	<!--Favicon-->
+	<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="images/favicon.ico" type="image/x-icon">
 </head>
-<body>
-	<h1>Update a User</h1>
-	<form action="updateuser" method="post">
-		<p>
-			<label for="userId">Enter your UserId</label>
-			<input id="userId" name="userId" value="${fn:escapeXml(param.userid)}">
-		</p>
-		<p>
-			<label for="lastName">New LastName</label>
-			<input id="lastName" name="lastName" value="">
-		</p>
-		<p>
-			<input type="submit">
-		</p>
-	</form>
-	<br/><br/>
-	<p>
-		<span id="successMessage"><b>${messages.success}</b></span>
-	</p>
-</body>
+<!-- navigation -->
+<section class="fixed-top navigation">
+	<div class="container">
+		<nav class="navbar navbar-expand-lg navbar-light">
+			<button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar"
+					aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<!-- navbar -->
+			<div class="collapse navbar-collapse text-center" id="navbar">
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item">
+						<a class="nav-link" href="/Composer/">Home</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="updateuser">Update User</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="createallsongsplaylist">Create All Liked Songs Playlist</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link page-scroll" href="readuseralllikedsongplaylist">Liked Songs</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link page-scroll" href="deletesong">Edit Playlist</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="CreateUserFavorites">Create User Favorite Playlist</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="DeleteUserFavorites">Delete User Favorites</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+	</div>
+</section>
+<section class="hero-section hero" data-background="" style="background-image: url(images/hero-area/banner-bg.png);">
+	<div class = "container" style="width:500px; margin:0 auto;">
+		<body>
+			<h1>Delete a UserFavorites PlayList</h1>
+			<form action="DeleteUserFavorites" method="post">
+				<p>
+					<label for="userId">Enter your UserId</label>
+					<input id="userId" name="userId" value="${fn:escapeXml(param.userid)}">
+				</p>
+				<p>
+					<input type="submit">
+				</p>
+			</form>
+			<br/><br/>
+			<p>
+				<span id="successMessage"><b>${messages.success}</b></span>
+			</p>
+		</body>
+	</div>
+</section>
 </html>

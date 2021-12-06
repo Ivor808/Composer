@@ -115,7 +115,7 @@ public class ReadUserAllLikedSongsPlayList extends HttpServlet {
 		          for(SongList songList: songLists) {
 		            int songListId= songList.getSongListId();
 		            AllLikedSongPlaylist allLikedSongPlaylist = allLikedSongPlaylistDao.getAllLikedSongPlaylistById(songListId);
-		            allLikedSongPlaylists.add(allLikedSongPlaylist);
+		            //allLikedSongPlaylists.add(allLikedSongPlaylist); //this needs fixing.
 		          }
 	          }
 

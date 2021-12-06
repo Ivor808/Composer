@@ -45,4 +45,20 @@
     <servlet-name>readuseralllikedsongplaylist</servlet-name>
     <url-pattern>/readuseralllikedsongplaylist</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>CreateUserFavorites</servlet-name>
+    <servlet-class>Composer.servlet.CreateUserFavorites</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CreateUserFavorites</servlet-name>
+    <url-pattern>/CreateUserFavorites</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>DeleteUserFavorites</servlet-name>
+    <servlet-class>Composer.servlet.DeleteUserFavorites</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DeleteUserFavorites</servlet-name>
+    <url-pattern>/DeleteUserFavorites</url-pattern>
+  </servlet-mapping>
 </web-app>
