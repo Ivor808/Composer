@@ -103,12 +103,6 @@
 <footer class="footer-section footer" style="background-image: url(images/backgrounds/footer-bg.png);">
     <div class="container">
         <div class="row">
-            <div class="col-lg-4 text-center text-lg-left mb-4 mb-lg-0">
-                <!-- logo -->
-                <a href="index.html">
-                    <img class="img-fluid" src="images/logo.png" alt="logo">
-                </a>
-            </div>
           <%--  <!-- footer menu -->
             <nav class="col-lg-8 align-self-center mb-5">
                 <ul class="list-inline text-lg-right text-center footer-menu">

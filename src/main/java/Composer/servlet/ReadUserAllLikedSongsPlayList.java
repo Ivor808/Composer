@@ -87,7 +87,7 @@ public class ReadUserAllLikedSongsPlayList extends HttpServlet {
 	    // get user's allikeplaylist form user name to playlist
 	    List<Song> allLikedSongPlaylists = new ArrayList<Song>();
 	    //List<BlogUsers> blogUsers = new ArrayList<BlogUsers>();
-
+		List<Song> userLikedSongs = null;
 	    // Retrieve and validate name.
 	    // firstname is retrieved from the URL query string.
 	    String userIdString = req.getParameter("userId");
@@ -105,18 +105,7 @@ public class ReadUserAllLikedSongsPlayList extends HttpServlet {
 	          if (user == null) {
 	        	  messages.put("success", "UserId is invalid");
 	          } else {
-	        	  SongDao songDao = SongDao.getInstance();
-	        	  
-	        	  
-	        	  
-	        	  
-	        	  SongListDao songListDao = SongListDao.getInstance();
-		          List<SongList> songLists = songListDao.getSongListByUserId(userId);
-		          for(SongList songList: songLists) {
-		            int songListId= songList.getSongListId();
-		            AllLikedSongPlaylist allLikedSongPlaylist = allLikedSongPlaylistDao.getAllLikedSongPlaylistById(songListId);
-		            //allLikedSongPlaylists.add(allLikedSongPlaylist); //this needs fixing.
-		          }
+							userLikedSongs = allLikedSongPlaylistDao.getSongs(user);
 	          }
 
 	        } catch (SQLException e) {
